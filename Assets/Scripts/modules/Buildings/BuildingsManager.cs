@@ -15,20 +15,10 @@ public class BuildingsManager {
         return Instance;
     }
 
-    public void Init() {
-        GenerateFoolishValue();
-        Print();
-    }
-
     public void AddBuilding(Building building) 
     {
         Debug.Log("Building " + building.ToString() + " added");
         BuildingList.Add(building);
-    }
-
-    private void GenerateFoolishValue()
-    {
-        this.BuildingList.Add(new House());
     }
 
     public void Print(bool withDetails = false)

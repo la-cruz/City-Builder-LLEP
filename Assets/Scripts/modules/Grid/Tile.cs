@@ -3,15 +3,5 @@
  */
 public class Tile
 {
-  /**
-   * Represents each case of state for our tile.
-   */
-  public enum State
-  {
-    None = 0,
-    Empty,
-    Occuped
-  }
-
-  public State state = State.None;
+  public int state = -1;
 }

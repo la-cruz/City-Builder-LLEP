@@ -94,6 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8502878584106661391}
   - component: {fileID: 8502878584106661388}
+  - component: {fileID: 7838663310442685526}
   m_Layer: 0
   m_Name: House 1
   m_TagString: Untagged
@@ -137,6 +138,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5.837252, y: 0.91544133, z: 5.9471617}
   m_Center: {x: -3.0070813, y: 0.4404007, z: -3.0257516}
+--- !u!114 &7838663310442685526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8502878584106661389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84187a809ecbe41bf90366ec429faeb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxNumberOfPeon: 6
+  Name: House
+  Level: 1
+  Tiredness: -10
 --- !u!1 &8502878584343360327
 GameObject:
   m_ObjectHideFlags: 0

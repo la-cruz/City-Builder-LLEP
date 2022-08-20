@@ -1,15 +1,17 @@
 using UnityEngine;
 
-public class ControllerManager : MonoBehaviour {
+public class ControllerManager : MonoBehaviour
+{
     public static ControllerManager Instance;
 
     private void Awake() {
         if (Instance == null) {
             Instance = this;
-            BuildingsManager.GetInstance().Init();
-            PeonsManager.GetInstance().Init();
+            BuildingsManager.GetInstance();
+            PeonsManager.GetInstance();
 
-            Farm ferme = new Farm();
+            // For testing
+/*            Farm ferme = new Farm();
 
             BuildingsManager.GetInstance().AddBuilding(ferme);
             foreach (Peon peon in PeonsManager.GetInstance().PeonList)
@@ -17,7 +19,7 @@ public class ControllerManager : MonoBehaviour {
                 ferme.AddPeon(peon);
                 peon.Workplace = ferme;
             }
-
+*/
 
         } else {
             Destroy(this);

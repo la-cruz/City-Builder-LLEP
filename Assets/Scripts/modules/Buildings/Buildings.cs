@@ -2,33 +2,12 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-public class Building
+public class Building : MonoBehaviour
 {
     public Building()
     {
         Name = "None";
         MaxNumberOfPeon = 0;
-        Level = 1;
-    }
-
-    public Building(string name)
-    {
-        Name = name;
-        MaxNumberOfPeon = 0;
-        Level = 1;
-    }
-
-    public Building(int maxNumberOfPeon)
-    {
-        Name = "None";
-        MaxNumberOfPeon = maxNumberOfPeon;
-        Level = 1;
-    }
-
-    public Building(string name, int maxNumberOfPeon)
-    {
-        Name = name;
-        MaxNumberOfPeon = maxNumberOfPeon;
         Level = 1;
     }
 

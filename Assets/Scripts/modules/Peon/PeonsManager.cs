@@ -16,9 +16,15 @@ public class PeonsManager {
         return Instance;
     }
     
-    public void Init() {
-        GenerateFoolishValue();
+    public void Init()
+    {
         Print();
+    }
+
+    public void AddPeon(Peon peon)
+    {
+        Debug.Log("AddPeon");
+        PeonList.Add(peon);
     }
 
     private void GenerateFoolishValue()

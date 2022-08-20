@@ -1755,6 +1755,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7596905911384282877}
   - component: {fileID: 6016767470209138586}
+  - component: {fileID: 3747637347105312729}
   m_Layer: 0
   m_Name: Farm 1
   m_TagString: Untagged
@@ -1792,6 +1793,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5.837252, y: 0.91544133, z: 5.9471617}
   m_Center: {x: -3.0070813, y: 0.4404007, z: -3.0257516}
+--- !u!114 &3747637347105312729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3544895075697841914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a65dca2044d240f8b5dd9e0db8164aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxNumberOfPeon: 2
+  Name: Farm
+  Level: 1
+  Tiredness: 20
+  WheatProduction: 3
 --- !u!1 &3977860396695755854
 GameObject:
   m_ObjectHideFlags: 0

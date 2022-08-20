@@ -26,6 +26,11 @@ public class Peon {
     }
 
     public void GoToWork() {
+
+        if (Workplace == null)
+        {
+          return;
+        }
         Debug.Log(Name + " va au travail");
         this.IsAtHome = false;
     }
@@ -38,7 +43,7 @@ public class Peon {
     IEnumerator workCycle()
     {
         for (;;) {
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(5f);
 
             if (!IsAtHome) {
                 Workplace.Product();

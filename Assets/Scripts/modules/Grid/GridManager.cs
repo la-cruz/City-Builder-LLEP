@@ -107,24 +107,41 @@ public class GridManager : MonoBehaviour
       {
         Tile tile = new Tile();
         grid.At(tile, i, j);
-        switch (tile.state)
+
+
+        if (i == rows / 2 && j == cols / 2)
         {
-          case Tile.State.Empty:
-            break;
-          case Tile.State.None:
-            tile.state = Tile.State.Empty;
-            Vector3 offsetPos = new Vector3(i * offsetTile, 0, j * offsetTile);
-            var prefabParent = new GameObject();
-            prefabParent.transform.parent = gameObject.transform;
-            prefabParent.transform.position = offsetPos;
-            prefabParent.name = (i * rows + j).ToString();
-            Instantiate(prefabs[0], prefabParent.transform);
-            break;
-          default:
-            break;
+          tile.state = 2;
+
+          Vector3 offsetPos = new Vector3(i * offsetTile, 0, j * offsetTile);
+          var prefabParent = new GameObject();
+          prefabParent.transform.parent = gameObject.transform;
+          prefabParent.transform.position = offsetPos;
+          prefabParent.name = (i * rows + j).ToString();
+          var newHouse = Instantiate(prefabs[2], prefabParent.transform);
+          var houseComponent = newHouse.GetComponent<House>();
+          if(houseComponent)
+          {
+            houseComponent.Init();
+            BuildingsManager.GetInstance().AddBuilding(houseComponent);
+          }
+
+        }
+        else if (tile.state == -1)
+        {
+          tile.state = 0;
+
+          Vector3 offsetPos = new Vector3(i * offsetTile, 0, j * offsetTile);
+          var prefabParent = new GameObject();
+          prefabParent.transform.parent = gameObject.transform;
+          prefabParent.transform.position = offsetPos;
+          prefabParent.name = (i * rows + j).ToString();
+          Instantiate(prefabs[0], prefabParent.transform);
         }
       }
     }
+
+
 
     return true;
   }
