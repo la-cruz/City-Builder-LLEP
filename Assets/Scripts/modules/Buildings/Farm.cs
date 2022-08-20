@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class Farm : Building
 {
     public Farm()
@@ -5,16 +7,21 @@ public class Farm : Building
         this.MaxNumberOfPeon = 2;
         this.Name = "Farm";
         this.Level = 1;
+        this.Tiredness = 20;
     }
 
-    public int WheatProduction { get; set; }
+    public int WheatProduction = 3;
 
     public override int Product()
     {
-        if (this.CurrentNumberOfPeon == 0) {
+        if (this.CurrentNumberOfPeon() == 0) {
             return 0;
-        } 
+        }
 
-        return this.WheatProduction * this.Level;
+        int production = this.WheatProduction * this.Level;
+
+        RessourcesManager.GetInstance().AddWheat(production);
+
+        return production;
     }
 }
