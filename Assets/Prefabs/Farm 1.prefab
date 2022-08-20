@@ -1754,6 +1754,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7596905911384282877}
+  - component: {fileID: 6016767470209138586}
   m_Layer: 0
   m_Name: Farm 1
   m_TagString: Untagged
@@ -1778,6 +1779,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &6016767470209138586
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3544895075697841914}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.837252, y: 0.91544133, z: 5.9471617}
+  m_Center: {x: -3.0070813, y: 0.4404007, z: -3.0257516}
 --- !u!1 &3977860396695755854
 GameObject:
   m_ObjectHideFlags: 0
