@@ -51,7 +51,7 @@ GameObject:
   - component: {fileID: 6513358534153454991}
   - component: {fileID: 4226393310353722309}
   m_Layer: 0
-  m_Name: Mine 1
+  m_Name: Sawmill 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
