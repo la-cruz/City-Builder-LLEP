@@ -5,16 +5,21 @@ public class Mine : Building
         this.MaxNumberOfPeon = 1;
         this.Name = "Mine";
         this.Level = 1;
+        this.Tiredness = 10;
     }
 
-    public int StoneProduction { get; set; }
+    public int StoneProduction = 1;
 
     public override int Product()
     {
-        if (this.CurrentNumberOfPeon == 0) {
+        if (this.CurrentNumberOfPeon() == 0) {
             return 0;
-        } 
+        }
 
-        return this.StoneProduction * this.Level;
+        int production = this.StoneProduction * this.Level;
+
+        RessourcesManager.GetInstance().AddStone(production);
+
+        return production;
     }
 }

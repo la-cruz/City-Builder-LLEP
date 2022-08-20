@@ -1,6 +1,6 @@
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
 public class Building
 {
@@ -32,13 +32,29 @@ public class Building
         Level = 1;
     }
 
-    public int MaxNumberOfPeon { get; set; }
+    public int MaxNumberOfPeon;
 
-    public int CurrentNumberOfPeon { get; set; }
+    public List<Peon> Peons = new List<Peon>();
 
-    public string Name { get; set; }
+    public string Name;
 
-    public int Level { get; set; }
+    public int Level;
+
+    public float Tiredness;
+
+    public int CurrentNumberOfPeon()
+    {
+        return Peons.Count;
+    }
+
+    public void AddPeon(Peon peon)
+    {
+        if (CurrentNumberOfPeon() < MaxNumberOfPeon) {
+            Debug.Log("Peon " + peon.Name + " added");
+            Peons.Add(peon);
+        }
+
+    }
 
     public virtual int Product() 
     {

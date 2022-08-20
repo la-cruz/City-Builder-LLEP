@@ -5,9 +5,10 @@ public class House : Building
         this.MaxNumberOfPeon = 6;
         this.Name = "House";
         this.Level = 1;
+        this.Tiredness = -10;
     }
 
-    public override int Product() 
+    public override int Product()
     {
         return 0;
     }
