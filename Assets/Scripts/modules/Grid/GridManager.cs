@@ -1,7 +1,17 @@
 using UnityEngine;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
+
+enum PrefabType
+{
+  Tile = 0,
+  Farm = 1,
+  House = 2,
+  Sawmill = 3,
+  Mine = 4,
+}
 
 /**
  * Singleton class used to manage Grid for external system. Contains only
@@ -118,14 +128,7 @@ public class GridManager : MonoBehaviour
           prefabParent.transform.parent = gameObject.transform;
           prefabParent.transform.position = offsetPos;
           prefabParent.name = (i * rows + j).ToString();
-          var newHouse = Instantiate(prefabs[2], prefabParent.transform);
-          var houseComponent = newHouse.GetComponent<House>();
-          if(houseComponent)
-          {
-            houseComponent.Init();
-            BuildingsManager.GetInstance().AddBuilding(houseComponent);
-          }
-
+          InstantiatePrefab(prefabParent.transform, PrefabType.House);
         }
         else if (tile.state == -1)
         {
@@ -144,6 +147,17 @@ public class GridManager : MonoBehaviour
 
 
     return true;
+  }
+
+  private void InstantiatePrefab(Transform transform, PrefabType prefabType)
+  {
+    var newBuilding = Instantiate(prefabs[((int)prefabType)], transform);
+    var buildingComponent = newBuilding.GetComponent<Building>();
+    if(buildingComponent)
+    {
+      buildingComponent.Init();
+      BuildingsManager.GetInstance().AddBuilding(buildingComponent);
+    }
   }
 
   public void UpdateGridAt(int index)

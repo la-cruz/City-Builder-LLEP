@@ -1,14 +1,13 @@
 public class Sawmill : Building
 {
-    public Sawmill()
+    public override void Init()
     {
         this.MaxNumberOfPeon = 1;
         this.Name = "Sawmill";
         this.Level = 1;
         this.Tiredness = 10;
+        this.production = 2;
     }
-
-    public int WoodProduction;
 
     public override int Product() 
     {
@@ -16,10 +15,10 @@ public class Sawmill : Building
             return 0;
         }
 
-        int production = this.WoodProduction * this.Level;
+        int currentProduction = this.production * this.Level;
 
-        RessourcesManager.GetInstance().AddWood(production);
+        RessourcesManager.GetInstance().AddWood(currentProduction);
 
-        return production;
+        return currentProduction;
     }
 }

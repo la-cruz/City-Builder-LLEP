@@ -2,20 +2,19 @@ using UnityEngine;
 
 public class Farm : Building
 {
-    public Farm()
+    public override void Init()
     {
         this.MaxNumberOfPeon = 2;
         this.Name = "Farm";
         this.Level = 1;
         this.Tiredness = 20;
+        this.production = 3;
 
-        Peon peon = PeonsManager.GetInstance().PeonList[0];
+        // Peon peon = PeonsManager.GetInstance().PeonList[0];
 
-        peon.Workplace = this;
-        this.AddPeon(peon);
+        // peon.Workplace = this;
+        // this.AddPeon(peon);
     }
-
-    public int WheatProduction = 3;
 
     public override int Product()
     {
@@ -23,10 +22,10 @@ public class Farm : Building
             return 0;
         }
 
-        int production = this.WheatProduction * this.Level;
+        int currentProduction = this.production * this.Level;
 
-        RessourcesManager.GetInstance().AddWheat(production);
+        RessourcesManager.GetInstance().AddWheat(currentProduction);
 
-        return production;
+        return currentProduction;
     }
 }

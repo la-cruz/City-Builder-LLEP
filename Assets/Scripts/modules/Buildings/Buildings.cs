@@ -21,23 +21,39 @@ public class Building : MonoBehaviour
 
     public float Tiredness;
 
+    public int production = 0;
+
     public int CurrentNumberOfPeon()
     {
         return Peons.Count;
     }
 
-    public void AddPeon(Peon peon)
+    public void AddPeon(Peon peon, bool isAddedToHome = false)
     {
         if (CurrentNumberOfPeon() < MaxNumberOfPeon) {
             Debug.Log("Peon " + peon.Name + " added");
             Peons.Add(peon);
+            if (!isAddedToHome) {
+                peon.Workplace = this;
+            }
+        }
+    }
+
+    public void RemovePeon(Peon peon)
+    {
+        if (CurrentNumberOfPeon() > 0)
+        {
+            Debug.Log("Peon " + peon.Name + " removed");
+            Peons.Remove(peon);
         }
     }
 
     public virtual int Product() 
     {
-        return 0;
+        return production;
     }
+
+    public virtual void Init() {}
 
     public override string ToString()
     {

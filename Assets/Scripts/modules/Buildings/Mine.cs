@@ -1,14 +1,13 @@
 public class Mine : Building
 {
-    public Mine()
+    public override void Init()
     {
         this.MaxNumberOfPeon = 1;
         this.Name = "Mine";
         this.Level = 1;
         this.Tiredness = 10;
+        this.production = 1;
     }
-
-    public int StoneProduction = 1;
 
     public override int Product()
     {
@@ -16,10 +15,10 @@ public class Mine : Building
             return 0;
         }
 
-        int production = this.StoneProduction * this.Level;
+        int currentProduction = this.production * this.Level;
 
-        RessourcesManager.GetInstance().AddStone(production);
+        RessourcesManager.GetInstance().AddStone(currentProduction);
 
-        return production;
+        return currentProduction;
     }
 }

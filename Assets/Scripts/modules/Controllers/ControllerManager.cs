@@ -7,8 +7,6 @@ public class ControllerManager : MonoBehaviour
     private void Awake() {
         if (Instance == null) {
             Instance = this;
-            BuildingsManager.GetInstance();
-            PeonsManager.GetInstance();
 
             // For testing
 /*            Farm ferme = new Farm();

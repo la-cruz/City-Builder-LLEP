@@ -22,7 +22,10 @@ public class Peon {
 
     public void GoToHome() {
         Debug.Log(Name + " rentre chez lui");
-        this.IsAtHome = true;
+        IsAtHome = true;
+        Workplace.RemovePeon(this);
+        Home.AddPeon(this, true);
+        
     }
 
     public void GoToWork() {
@@ -32,7 +35,9 @@ public class Peon {
           return;
         }
         Debug.Log(Name + " va au travail");
-        this.IsAtHome = false;
+        IsAtHome = false;
+        Workplace.AddPeon(this);
+        Home.RemovePeon(this);
     }
 
     public override string ToString()

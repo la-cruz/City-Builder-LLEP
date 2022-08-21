@@ -15,11 +15,6 @@ public class PeonsManager {
 
         return Instance;
     }
-    
-    public void Init()
-    {
-        Print();
-    }
 
     public void AddPeon(Peon peon)
     {
