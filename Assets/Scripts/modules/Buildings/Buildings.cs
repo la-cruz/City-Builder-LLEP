@@ -22,6 +22,9 @@ public class Building : MonoBehaviour
     public float Tiredness;
 
     public int production = 0;
+    public int WheatCost = 0;
+    public int StoneCost = 0;
+    public int WoodCost = 0;
 
     public int CurrentNumberOfPeon()
     {

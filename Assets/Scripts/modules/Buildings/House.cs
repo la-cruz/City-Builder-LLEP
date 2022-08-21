@@ -9,6 +9,9 @@ public class House : Building
         this.Level = 1;
         this.Tiredness = -10;
         this.production = 0;
+        this.WheatCost = 1;
+        this.StoneCost = 1;
+        this.WoodCost = 1;
 
         FillWithPeon();
     }

@@ -7,6 +7,9 @@ public class Mine : Building
         this.Level = 1;
         this.Tiredness = 10;
         this.production = 1;
+        this.WheatCost = 1;
+        this.StoneCost = 1;
+        this.WoodCost = 1;
     }
 
     public override int Product()
