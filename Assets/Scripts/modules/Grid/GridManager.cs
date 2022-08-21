@@ -188,7 +188,6 @@ public class GridManager : MonoBehaviour
           // Check cost
           if (!RessourcesManager.GetInstance().canConstruct(prefabType))
           {
-            Debug.Log("NOOOPE");
             return;
           }
 

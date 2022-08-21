@@ -23,7 +23,6 @@ public class Peon {
     public void GoToHome() {
         Debug.Log(Name + " rentre chez lui");
         IsAtHome = true;
-        
     }
 
     public void GoToWork() {

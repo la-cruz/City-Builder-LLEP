@@ -31,7 +31,7 @@ public class Building : MonoBehaviour
 
     private static bool IsWorkingPredicate(Peon peon)
     {
-        return peon.IsAtHome;
+        return !peon.IsAtHome;
     }
 
     public void AddPeon(Peon peon, bool isAddedToHome = false)
@@ -50,6 +50,7 @@ public class Building : MonoBehaviour
         if (CurrentNumberOfPeon() > 0)
         {
             Debug.Log("Peon " + peon.Name + " removed");
+            peon.Workplace = null;
             Peons.Remove(peon);
         }
     }

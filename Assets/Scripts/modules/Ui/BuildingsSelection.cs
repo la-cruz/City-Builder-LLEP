@@ -24,6 +24,35 @@ public class BuildingsSelection : MonoBehaviour
         FarmBtn.interactable = RessourcesManager.canConstructFarm();
         SawmillBtn.interactable = RessourcesManager.canConstructSawmill();
         MineBtn.interactable = RessourcesManager.canConstructMine();
+
+        switch (this.buildingSelected) {
+            case PrefabType.Farm :
+                if (!FarmBtn.interactable) {
+                    buildingSelected = PrefabType.None;
+                    resetSelectedButton();
+                }
+                break;
+            case PrefabType.House :
+                if (!HouseBtn.interactable) {
+                    buildingSelected = PrefabType.None;
+                    resetSelectedButton();
+                }
+                break;
+            case PrefabType.Sawmill :
+                if (!SawmillBtn.interactable) {
+                    buildingSelected = PrefabType.None;
+                    resetSelectedButton();
+                }
+                break;
+            case PrefabType.Mine :
+                if (!MineBtn.interactable) {
+                    buildingSelected = PrefabType.None;
+                    resetSelectedButton();
+                }
+                break;
+            default :
+                break;
+        }
     }
     
     public PrefabType getBuildingSelected() {

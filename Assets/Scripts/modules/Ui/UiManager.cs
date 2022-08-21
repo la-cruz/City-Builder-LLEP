@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class UiManager : MonoBehaviour
 {
@@ -14,6 +15,16 @@ public class UiManager : MonoBehaviour
     public Text PeonCount;
 
     public GameObject InformationPanel;
+
+    public GameObject PlusButton;
+
+    public GameObject MinusButton;
+
+    private RessourcesManager RessourcesManager;
+
+    private PeonsManager PeonsManager;
+
+    private Building SelectedBuilding;
 
     public static UiManager GetInstance()
     {
@@ -61,6 +72,7 @@ public class UiManager : MonoBehaviour
     public void HideInformationPanel()
     {
       InformationPanel.SetActive(false);
+      SelectedBuilding = null;
     }
 
     public void UpdateInformationPanel(Building building)
@@ -70,6 +82,8 @@ public class UiManager : MonoBehaviour
         HideInformationPanel();
         return;
       }
+
+      SelectedBuilding = building;
 
       var canvas = InformationPanel.transform.GetChild(0);
 
@@ -106,6 +120,35 @@ public class UiManager : MonoBehaviour
           {
             prodText.text += " woods";
           }
+      }
+
+      MinusButton.GetComponent<Button>().interactable = building.CurrentNumberOfPeon() != 0;
+      PlusButton.GetComponent<Button>().interactable = !(PeonsManager.GetInstance().PeonList.Find(peon => peon.Workplace == null) == null || building.CurrentNumberOfPeon() == building.MaxNumberOfPeon);
+
+      // Hide button for house
+      if (buildingType == "House")
+      {
+        MinusButton.SetActive(false);
+        PlusButton.SetActive(false);
+      } else {
+        MinusButton.SetActive(true);
+        PlusButton.SetActive(true);
+      }
+  }
+
+  public void AddPeonToBuilding()
+  {
+    Peon peonToSendToWork = PeonsManager.GetInstance().PeonList.Find(peon => peon.Workplace == null);
+    if (peonToSendToWork != null) {
+      SelectedBuilding.AddPeon(peonToSendToWork);
+      UpdateInformationPanel(SelectedBuilding);
     }
+  }
+
+  public void RemovePeonFromBuilding()
+  {
+    Peon peonToTakeFromWork = SelectedBuilding.Peons[0];
+    SelectedBuilding.RemovePeon(peonToTakeFromWork);
+    UpdateInformationPanel(SelectedBuilding);
   }
 }
