@@ -18,7 +18,9 @@ public class House : Building
         for (int i = 0; i < this.MaxNumberOfPeon; i++)
         {
             randomName += i.ToString();
-            PeonsManager.GetInstance().AddPeon(new Peon() { Name = randomName, Home = this });
+            Peon peon = new Peon() { Name = randomName, Home = this };
+            PeonsManager.GetInstance().AddPeon(peon);
+            this.AddPeon(peon, true);
         }
     }
 

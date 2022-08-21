@@ -162,7 +162,6 @@ public class GridManager : MonoBehaviour
   public void UpdateGridAt(int index)
   {
     var tileWrapper = gameObject.transform.GetChild(index).gameObject;
-    Debug.Log(tileWrapper.name);
     if (tileWrapper == null)
     {
       Debug.Log("tile wrapper is null");
@@ -179,30 +178,28 @@ public class GridManager : MonoBehaviour
       switch (tileComponent.state)
       {
         case 0:
-          Debug.LogWarning("default tile.");
-          // Add a farm
+          // TO TEST FOR NOW : Add a farm
           var tileToDestroy = tileWrapper.transform.GetChild(0).gameObject;
           Debug.Log(tileToDestroy.name);
           Destroy(tileToDestroy);
-          Instantiate(prefabs[1], tileWrapper.transform.position, Quaternion.identity, tileWrapper.transform);
+          var newTile = Instantiate(prefabs[1], tileWrapper.transform.position, Quaternion.identity, tileWrapper.transform);
           tileComponent.state = 1;
+          buildingComponent = newTile.GetComponent<Building>();
+          buildingComponent.Init();
+          // --------------
+
+          UiManager.GetInstance().ShowInformationPanel();
+          UiManager.GetInstance().UpdateInformationPanel(buildingComponent);
           break;
         case 1:
-          PrintBuidlingInfo(buildingComponent);
-          break;
         case 2:
-          Debug.LogWarning("house");
-          PrintBuidlingInfo(buildingComponent);
-          break;
         case 3:
-          Debug.LogWarning("sawmill.");
-          PrintBuidlingInfo(buildingComponent);
-          break;
         case 4:
-          Debug.LogWarning("mine.");
-          PrintBuidlingInfo(buildingComponent);
+          UiManager.GetInstance().ShowInformationPanel();
+          UiManager.GetInstance().UpdateInformationPanel(buildingComponent);
           break;
         default:
+          UiManager.GetInstance().HideInformationPanel();
           Debug.LogWarning("Default");
           break;
       }
