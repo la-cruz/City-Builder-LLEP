@@ -9,7 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1174192846951696}
-  - component: {fileID: 8647215137249398595}
+  - component: {fileID: 3278429548820631365}
+  - component: {fileID: 7002732362720464253}
+  - component: {fileID: 5438668177863457773}
   m_Layer: 0
   m_Name: Mine 1
   m_TagString: Untagged
@@ -96,6 +98,51 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &3278429548820631365
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1174192846951697}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.983348, y: 0.59647685, z: 6.002884}
+  m_Center: {x: -2.9863281, y: 0.26291892, z: -2.9986358}
+--- !u!114 &7002732362720464253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1174192846951697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f431f2d4910b47c2bf47daf062ad155, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxNumberOfPeon: 1
+  Name: Mine
+  Level: 1
+  Tiredness: 10
+  production: 1
+  WheatCost: 0
+  StoneCost: 0
+  WoodCost: 0
+--- !u!114 &5438668177863457773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1174192846951697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bd01b7aec17d43849ad4f8be5a658cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1174192530019845
 PrefabInstance:
   m_ObjectHideFlags: 0

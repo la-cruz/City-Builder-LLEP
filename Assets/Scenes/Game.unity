@@ -178,6 +178,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3418622060641265567, guid: ec2d4781411f11336b81585bd156a72f, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec2d4781411f11336b81585bd156a72f, type: 3}
 --- !u!1 &417190716
@@ -335,9 +339,9 @@ PrefabInstance:
       objectReference: {fileID: 1209685478}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28d9c0aba78944d21a7bd234936a7012, type: 3}
---- !u!114 &661038528 stripped
+--- !u!114 &665413344 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1689349491770508702, guid: ec2d4781411f11336b81585bd156a72f, type: 3}
+  m_CorrespondingSourceObject: {fileID: 3418622060641265566, guid: ec2d4781411f11336b81585bd156a72f, type: 3}
   m_PrefabInstance: {fileID: 298139165}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
@@ -419,7 +423,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 210e46ff05046544da4939c899434ab8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buildingsSelection: {fileID: 661038528}
+  buildingsSelection: {fileID: 665413344}
 --- !u!4 &827330162
 Transform:
   m_ObjectHideFlags: 0

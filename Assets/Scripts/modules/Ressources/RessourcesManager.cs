@@ -14,9 +14,9 @@ public class RessourcesManager: MonoBehaviour
     private Sawmill Sawmill = new Sawmill();
     private bool SawmillInitied = false;
 
-    public int Wheat = 0;
-    public int Stone = 0;
-    public int Wood = 0;
+    public int Wheat = 100;
+    public int Stone = 100;
+    public int Wood = 100;
 
     public static RessourcesManager GetInstance()
     {

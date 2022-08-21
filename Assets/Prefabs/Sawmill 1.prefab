@@ -51,6 +51,7 @@ GameObject:
   - component: {fileID: 6513358534153454991}
   - component: {fileID: 4226393310353722309}
   - component: {fileID: -6000929111848358636}
+  - component: {fileID: 1451019031357336209}
   m_Layer: 0
   m_Name: Sawmill 1
   m_TagString: Untagged
@@ -103,6 +104,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd01b7aec17d43849ad4f8be5a658cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1451019031357336209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2371157059978726280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56c8c1db41930458d9581ae9a35bf16e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxNumberOfPeon: 2
+  Name: Sawmill
+  Level: 1
+  Tiredness: 7.5
+  production: 2
+  WheatCost: 0
+  StoneCost: 0
+  WoodCost: 0
 --- !u!1 &2972444114597001848
 GameObject:
   m_ObjectHideFlags: 0
