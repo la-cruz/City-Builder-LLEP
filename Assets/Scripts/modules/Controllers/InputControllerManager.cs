@@ -43,6 +43,11 @@ public class InputControllerManager : MonoBehaviour
         }
       }
     }
+
+    if(Input.GetKeyDown(KeyCode.Escape))
+    {
+      Application.Quit();
+    }
   }
   #endregion
 

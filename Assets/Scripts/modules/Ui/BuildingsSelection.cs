@@ -33,7 +33,7 @@ public class BuildingsSelection : MonoBehaviour
     public void setBuildingSelected(int enumValue) {
         this.resetSelectedButton();
         if (this.buildingSelected == (PrefabType) enumValue) {
-            this.buildingSelected = PrefabType.Tile;
+            this.buildingSelected = PrefabType.None;
         } else {
             this.buildingSelected = (PrefabType) enumValue;
         }
