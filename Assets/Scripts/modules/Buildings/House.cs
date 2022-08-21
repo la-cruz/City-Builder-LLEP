@@ -2,18 +2,25 @@ using UnityEngine;
 
 public class House : Building
 {
+    public House()
+    {
+      this.MaxNumberOfPeon = 3;
+      this.Name = "House";
+      this.Level = 1;
+      this.Tiredness = -10;
+      this.production = 0;
+      this.WheatCost = 0;
+      this.StoneCost = 20;
+      this.WoodCost = 10;
+    }
+
     public override void Init()
     {
-        this.MaxNumberOfPeon = 3;
-        this.Name = "House";
-        this.Level = 1;
-        this.Tiredness = -10;
-        this.production = 0;
-        this.WheatCost = 1;
-        this.StoneCost = 1;
-        this.WoodCost = 1;
-
         FillWithPeon();
+
+        RessourcesManager.GetInstance().RemoveStone(this.StoneCost);
+        RessourcesManager.GetInstance().RemoveWheat(this.WheatCost);
+        RessourcesManager.GetInstance().RemoveWood(this.WoodCost);
     }
 
     public void FillWithPeon() {

@@ -1810,7 +1810,10 @@ MonoBehaviour:
   Name: Farm
   Level: 1
   Tiredness: 20
-  production: 0
+  production: 2
+  WheatCost: 10
+  StoneCost: 0
+  WoodCost: 30
 --- !u!114 &-1731706213424964017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1823,7 +1826,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd01b7aec17d43849ad4f8be5a658cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
 --- !u!1 &3977860396695755854
 GameObject:
   m_ObjectHideFlags: 0

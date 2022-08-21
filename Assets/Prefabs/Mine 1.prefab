@@ -130,7 +130,7 @@ MonoBehaviour:
   production: 1
   WheatCost: 0
   StoneCost: 0
-  WoodCost: 0
+  WoodCost: 20
 --- !u!114 &5438668177863457773
 MonoBehaviour:
   m_ObjectHideFlags: 0

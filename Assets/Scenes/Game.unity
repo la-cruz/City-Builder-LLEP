@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -285,30 +285,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1678290486328144756, guid: 28d9c0aba78944d21a7bd234936a7012, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -150
-      objectReference: {fileID: 0}
-    - target: {fileID: 1678290486328144757, guid: 28d9c0aba78944d21a7bd234936a7012, type: 3}
-      propertyPath: m_Text
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1678290486328144757, guid: 28d9c0aba78944d21a7bd234936a7012, type: 3}
-      propertyPath: m_FontData.m_Alignment
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1678290486540383718, guid: 28d9c0aba78944d21a7bd234936a7012, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 154.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1678290486540383718, guid: 28d9c0aba78944d21a7bd234936a7012, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -48.79999
-      objectReference: {fileID: 0}
-    - target: {fileID: 1678290486540383719, guid: 28d9c0aba78944d21a7bd234936a7012, type: 3}
-      propertyPath: m_Text
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1678290486547245801, guid: 28d9c0aba78944d21a7bd234936a7012, type: 3}
       propertyPath: m_Name
       value: UI
@@ -319,7 +295,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1678290486547245806, guid: 28d9c0aba78944d21a7bd234936a7012, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 184
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1678290486547245806, guid: 28d9c0aba78944d21a7bd234936a7012, type: 3}
       propertyPath: m_LocalPosition.y
@@ -361,38 +337,6 @@ PrefabInstance:
       propertyPath: InformationPanel
       value: 
       objectReference: {fileID: 1209685478}
-    - target: {fileID: 1678290486925509448, guid: 28d9c0aba78944d21a7bd234936a7012, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 154.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1678290486925509448, guid: 28d9c0aba78944d21a7bd234936a7012, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -149.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1678290486925509449, guid: 28d9c0aba78944d21a7bd234936a7012, type: 3}
-      propertyPath: m_Text
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1678290487226088256, guid: 28d9c0aba78944d21a7bd234936a7012, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 154.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1678290487226088256, guid: 28d9c0aba78944d21a7bd234936a7012, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -98.89996
-      objectReference: {fileID: 0}
-    - target: {fileID: 1678290487226088257, guid: 28d9c0aba78944d21a7bd234936a7012, type: 3}
-      propertyPath: m_Text
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7524243332920333838, guid: 28d9c0aba78944d21a7bd234936a7012, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -40
-      objectReference: {fileID: 0}
-    - target: {fileID: 7524243332920333838, guid: 28d9c0aba78944d21a7bd234936a7012, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -41
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28d9c0aba78944d21a7bd234936a7012, type: 3}
 --- !u!114 &665413344 stripped
@@ -416,6 +360,7 @@ GameObject:
   m_Component:
   - component: {fileID: 796786177}
   - component: {fileID: 796786176}
+  - component: {fileID: 796786178}
   m_Layer: 0
   m_Name: ControllerManager
   m_TagString: Untagged
@@ -450,6 +395,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &796786178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 796786175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5395f0cb4f034f1394e467b2e048754, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Wheat: 100
+  Stone: 100
+  Wood: 100
 --- !u!1 &827330160
 GameObject:
   m_ObjectHideFlags: 0
@@ -644,6 +604,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8101304216557527321, guid: 813a2643bcb3ade45933d2e0195f525b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 86.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8101304217218590975, guid: 813a2643bcb3ade45933d2e0195f525b, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 171.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8101304217320324901, guid: 813a2643bcb3ade45933d2e0195f525b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 114.8
+      objectReference: {fileID: 0}
     - target: {fileID: 8101304217518776672, guid: 813a2643bcb3ade45933d2e0195f525b, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -691,6 +663,18 @@ PrefabInstance:
     - target: {fileID: 8101304217518776673, guid: 813a2643bcb3ade45933d2e0195f525b, type: 3}
       propertyPath: m_Name
       value: UI_InfoPanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 8101304217518776673, guid: 813a2643bcb3ade45933d2e0195f525b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8101304217566082732, guid: 813a2643bcb3ade45933d2e0195f525b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 212.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8101304217740356997, guid: 813a2643bcb3ade45933d2e0195f525b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 185.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 813a2643bcb3ade45933d2e0195f525b, type: 3}

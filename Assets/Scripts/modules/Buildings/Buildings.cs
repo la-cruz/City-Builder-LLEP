@@ -4,20 +4,13 @@ using System.Collections.Generic;
 
 public class Building : MonoBehaviour
 {
-    public Building()
-    {
-        Name = "None";
-        MaxNumberOfPeon = 0;
-        Level = 1;
-    }
-
-    public int MaxNumberOfPeon;
+    public int MaxNumberOfPeon = 0;
 
     public List<Peon> Peons = new List<Peon>();
 
-    public string Name;
+    public string Name = "None";
 
-    public int Level;
+    public int Level = 1;
 
     public float Tiredness;
 

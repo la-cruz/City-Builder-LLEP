@@ -121,7 +121,7 @@ MonoBehaviour:
   Level: 1
   Tiredness: 7.5
   production: 2
-  WheatCost: 0
+  WheatCost: 10
   StoneCost: 0
   WoodCost: 0
 --- !u!1 &2972444114597001848

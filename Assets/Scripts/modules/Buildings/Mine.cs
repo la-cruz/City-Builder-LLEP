@@ -1,15 +1,24 @@
+using UnityEngine;
+
 public class Mine : Building
 {
+    public Mine()
+    {
+      this.MaxNumberOfPeon = 1;
+      this.Name = "Mine";
+      this.Level = 1;
+      this.Tiredness = 10;
+      this.production = 1;
+      this.WheatCost = 10;
+      this.StoneCost = 0;
+      this.WoodCost = 45;
+    }
+
     public override void Init()
     {
-        this.MaxNumberOfPeon = 1;
-        this.Name = "Mine";
-        this.Level = 1;
-        this.Tiredness = 10;
-        this.production = 1;
-        this.WheatCost = 1;
-        this.StoneCost = 1;
-        this.WoodCost = 1;
+        RessourcesManager.GetInstance().RemoveStone(this.StoneCost);
+        RessourcesManager.GetInstance().RemoveWheat(this.WheatCost);
+        RessourcesManager.GetInstance().RemoveWood(this.WoodCost);
     }
 
     public override int Product()

@@ -15,10 +15,6 @@ public class UiManager : MonoBehaviour
 
     public GameObject InformationPanel;
 
-    private RessourcesManager RessourcesManager;
-
-    private PeonsManager PeonsManager;
-
     public static UiManager GetInstance()
     {
       if (Instance == null)
@@ -47,16 +43,14 @@ public class UiManager : MonoBehaviour
         {
           Debug.LogWarning("Add Information Panel prefab to this script.");
         }
-        RessourcesManager = RessourcesManager.GetInstance();
-        PeonsManager = PeonsManager.GetInstance();
     }
 
     private void Update() {
-        WheatCount.text = RessourcesManager.Wheat.ToString();
-        StoneCount.text = RessourcesManager.Stone.ToString();
-        WoodCount.text = RessourcesManager.Wood.ToString();
+        WheatCount.text = RessourcesManager.GetInstance().Wheat.ToString();
+        StoneCount.text = RessourcesManager.GetInstance().Stone.ToString();
+        WoodCount.text = RessourcesManager.GetInstance().Wood.ToString();
 
-        PeonCount.text = PeonsManager.GetCurrentPeonCount().ToString();
+        PeonCount.text = PeonsManager.GetInstance().GetCurrentPeonCount().ToString();
     }
 
     public void ShowInformationPanel()

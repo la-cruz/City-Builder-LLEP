@@ -185,6 +185,13 @@ public class GridManager : MonoBehaviour
       {
         if (tileComponent.state < 1)
         {
+          // Check cost
+          if (!RessourcesManager.GetInstance().canConstruct(prefabType))
+          {
+            Debug.Log("NOOOPE");
+            return;
+          }
+
           UiManager.GetInstance().HideInformationPanel();
           // Destroy the previous building
           var tileToDestroy = tileWrapper.transform.GetChild(0).gameObject;
