@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 
-enum PrefabType
+public enum PrefabType
 {
   Tile = 0,
   Farm = 1,
