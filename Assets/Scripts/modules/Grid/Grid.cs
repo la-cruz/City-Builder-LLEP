@@ -8,8 +8,8 @@ public class Grid
 {
   #region VARIABLES
 
-  public uint cols = 0;
-  public uint rows = 0;
+  public int cols = 0;
+  public int rows = 0;
 
   private Tile[] tiles;
 
@@ -20,7 +20,7 @@ public class Grid
   /**
    * Initialize our map of tile.
    */
-  public bool Create(uint _cols = 0, uint _rows = 0)
+  public bool Create(int _cols = 0, int _rows = 0)
   {
     if (tiles != null)
     {
@@ -57,38 +57,47 @@ public class Grid
   /**
    * Get the Tile at a specific position.
    */
-  public bool At(Tile tile, uint i, uint j)
+  public void At(out Tile tile, int i, int j)
   {
     if (i >= rows || j >= cols)
     {
       Debug.LogWarning("Try to access to an out of bands case.");
-      return false;
+      tile = null;
+    }
+    else
+    {
+      At(out tile, i * rows + j);
     }
 
-    return At(tile, i * rows + j);
   }
 
   /**
    * Get the Tile at a specific index.
    */
-  public bool At(Tile tile, uint index)
+  public void At(out Tile tile, int index)
   {
     if (index >= rows * cols)
     {
       Debug.LogWarning("Try to access to an out of bands case.");
-      return false;
+      tile = null;
     }
+    else
+    {
+      tile = tiles[index];
+    }
+  }
 
-    tile = tiles[index];
-    return true;
+  public void UpdateAt(Tile tile, int index)
+  {
+    tiles[index] = tile;
   }
 
   public string PrintTile()
   {
     string print = "";
-    for (uint j = 0; j < cols; j++)
+    for (int j = 0; j < cols; j++)
     {
-      for (uint i = 0; i < rows; i++)
+      for (int i = 0; i < rows; i++)
       {
         print += tiles[i * rows + j].state + " ";
       }

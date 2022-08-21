@@ -34,8 +34,8 @@ public class GridManager : MonoBehaviour
   /**
    * Dimensions of our grid.
    */
-  public uint cols = 5;
-  public uint rows = 5;
+  public int cols = 5;
+  public int rows = 5;
 
   /**
    * Represent the offset needed betwwen each tile.
@@ -87,7 +87,7 @@ public class GridManager : MonoBehaviour
   /**
    * Generate a new Grid only if there is not grid already created.
    */
-  public bool GenerateGrid(uint rows = 10, uint cols = 10)
+  public bool GenerateGrid(int rows = 10, int cols = 10)
   {
     return grid.Create(rows, cols);
   }
@@ -111,13 +111,12 @@ public class GridManager : MonoBehaviour
       return false;
     }
 
-    for (uint i = 0; i < rows; i++)
+    for (int i = 0; i < rows; i++)
     {
-      for (uint j = 0; j < cols; j++)
+      for (int j = 0; j < cols; j++)
       {
-        Tile tile = new Tile();
-        grid.At(tile, i, j);
-
+        Tile tile;
+        grid.At(out tile, i, j);
 
         if (i == rows / 2 && j == cols / 2)
         {
@@ -162,15 +161,73 @@ public class GridManager : MonoBehaviour
 
   public void UpdateGridAt(int index)
   {
-    Debug.Log("index : " + index);
-    Debug.Log("UpdateGridAt : " + gameObject.transform.GetChild(index).gameObject.name);
-    var tile = gameObject.transform.GetChild(index).gameObject;
-    if (tile)
+    var tileWrapper = gameObject.transform.GetChild(index).gameObject;
+    Debug.Log(tileWrapper.name);
+    if (tileWrapper == null)
     {
-      var tileToDestroy = tile.transform.GetChild(0).gameObject;
-      Destroy(tileToDestroy);
-      Instantiate(prefabs[1], tile.transform.position, Quaternion.identity, tile.transform);
+      Debug.Log("tile wrapper is null");
+      return;
     }
+
+    Tile tileComponent;
+    grid.At(out tileComponent, index);
+    if (tileComponent != null)
+    {
+      Debug.Log("current tile state : " + tileComponent.state);
+      var tile = tileWrapper.transform.GetChild(0).gameObject;
+      var buildingComponent = tile.GetComponent<Building>();
+      switch (tileComponent.state)
+      {
+        case 0:
+          Debug.LogWarning("default tile.");
+          // Add a farm
+          var tileToDestroy = tileWrapper.transform.GetChild(0).gameObject;
+          Debug.Log(tileToDestroy.name);
+          Destroy(tileToDestroy);
+          Instantiate(prefabs[1], tileWrapper.transform.position, Quaternion.identity, tileWrapper.transform);
+          tileComponent.state = 1;
+          break;
+        case 1:
+          PrintBuidlingInfo(buildingComponent);
+          break;
+        case 2:
+          Debug.LogWarning("house");
+          PrintBuidlingInfo(buildingComponent);
+          break;
+        case 3:
+          Debug.LogWarning("sawmill.");
+          PrintBuidlingInfo(buildingComponent);
+          break;
+        case 4:
+          Debug.LogWarning("mine.");
+          PrintBuidlingInfo(buildingComponent);
+          break;
+        default:
+          Debug.LogWarning("Default");
+          break;
+      }
+    }
+    else
+    {
+      Debug.Log("Don't find the corresponding tile current index");
+    }
+  }
+
+  /**
+   * Print Building info
+   */
+  void PrintBuidlingInfo(Building building)
+  {
+    string debugInfo = "";
+    debugInfo += "building : " + building.GetType().ToString() + "\n";
+    debugInfo += "level : " + building.Level + "\n";
+    debugInfo += "Peon List :\n";
+    foreach (var peon in building.Peons)
+    {
+      debugInfo += "  " + peon.Name + "\n";
+    }
+
+    Debug.LogWarning(debugInfo);
   }
 
   /**
