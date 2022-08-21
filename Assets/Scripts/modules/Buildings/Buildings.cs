@@ -28,6 +28,16 @@ public class Building : MonoBehaviour
         return Peons.Count;
     }
 
+    public List<Peon> CurrentNumberOfWorkingPeon()
+    {
+        return Peons.FindAll(IsWorkingPredicate);
+    }
+
+    private static bool IsWorkingPredicate(Peon peon)
+    {
+        return peon.IsAtHome;
+    }
+
     public void AddPeon(Peon peon, bool isAddedToHome = false)
     {
         if (CurrentNumberOfPeon() < MaxNumberOfPeon) {

@@ -52,11 +52,11 @@ public class UiManager : MonoBehaviour
     }
 
     private void Update() {
-        WheatCount.text = "Blé : " + RessourcesManager.Wheat;
-        StoneCount.text = "Pierre : " + RessourcesManager.Stone;
-        WoodCount.text = "Bois : " + RessourcesManager.Wood;
+        WheatCount.text = ": " + RessourcesManager.Wheat;
+        StoneCount.text = ": " + RessourcesManager.Stone;
+        WoodCount.text = ": " + RessourcesManager.Wood;
 
-        PeonCount.text = "Population : " + PeonsManager.GetCurrentPeonCount();
+        PeonCount.text = ": " + PeonsManager.GetCurrentPeonCount();
     }
 
     public void ShowInformationPanel()
