@@ -8,6 +8,8 @@ public class InputControllerManager : MonoBehaviour
 
   private static InputControllerManager Instance;
 
+  public BuildingsSelection buildingsSelection;
+
   #endregion
 
   #region UNITY_METHODS
@@ -59,7 +61,8 @@ public class InputControllerManager : MonoBehaviour
     int index;
     int.TryParse(gridName, out index);
 
-    GridManager.GetInstance().UpdateGridAt(index);
+    GridManager.GetInstance().UpdateGridAt(index, buildingsSelection.buildingSelected);
   }
+
   #endregion
 }

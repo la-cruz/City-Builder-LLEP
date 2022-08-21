@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public enum PrefabType
 {
+  None = -1,
   Tile = 0,
   Farm = 1,
   House = 2,
@@ -138,12 +139,10 @@ public class GridManager : MonoBehaviour
           prefabParent.transform.parent = gameObject.transform;
           prefabParent.transform.position = offsetPos;
           prefabParent.name = (i * rows + j).ToString();
-          Instantiate(prefabs[0], prefabParent.transform);
+          InstantiatePrefab(prefabParent.transform, PrefabType.Tile);
         }
       }
     }
-
-
 
     return true;
   }
@@ -159,7 +158,7 @@ public class GridManager : MonoBehaviour
     }
   }
 
-  public void UpdateGridAt(int index)
+  public void UpdateGridAt(int index, PrefabType prefabType)
   {
     var tileWrapper = gameObject.transform.GetChild(index).gameObject;
     if (tileWrapper == null)
@@ -172,36 +171,27 @@ public class GridManager : MonoBehaviour
     grid.At(out tileComponent, index);
     if (tileComponent != null)
     {
-      Debug.Log("current tile state : " + tileComponent.state);
       var tile = tileWrapper.transform.GetChild(0).gameObject;
       var buildingComponent = tile.GetComponent<Building>();
-      switch (tileComponent.state)
-      {
-        case 0:
-          // TO TEST FOR NOW : Add a farm
-          var tileToDestroy = tileWrapper.transform.GetChild(0).gameObject;
-          Debug.Log(tileToDestroy.name);
-          Destroy(tileToDestroy);
-          var newTile = Instantiate(prefabs[1], tileWrapper.transform.position, Quaternion.identity, tileWrapper.transform);
-          tileComponent.state = 1;
-          buildingComponent = newTile.GetComponent<Building>();
-          buildingComponent.Init();
-          // --------------
 
-          UiManager.GetInstance().ShowInformationPanel();
-          UiManager.GetInstance().UpdateInformationPanel(buildingComponent);
-          break;
-        case 1:
-        case 2:
-        case 3:
-        case 4:
-          UiManager.GetInstance().ShowInformationPanel();
-          UiManager.GetInstance().UpdateInformationPanel(buildingComponent);
-          break;
-        default:
+      // Want to display the panel information
+      if (prefabType == PrefabType.None || prefabType == PrefabType.Tile)
+      {
+        UiManager.GetInstance().ShowInformationPanel();
+        UiManager.GetInstance().UpdateInformationPanel(buildingComponent);
+      }
+      // Want to add new building
+      else
+      {
+        if (tileComponent.state < 1)
+        {
           UiManager.GetInstance().HideInformationPanel();
-          Debug.LogWarning("Default");
-          break;
+          // Destroy the previous building
+          var tileToDestroy = tileWrapper.transform.GetChild(0).gameObject;
+          Destroy(tileToDestroy);
+          InstantiatePrefab(tileWrapper.transform, prefabType);
+          tileComponent.state = ((int)prefabType);
+        }
       }
     }
     else

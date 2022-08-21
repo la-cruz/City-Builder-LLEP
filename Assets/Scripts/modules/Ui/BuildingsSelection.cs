@@ -6,7 +6,7 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Button))]
 public class BuildingsSelection : MonoBehaviour
 {
-    public PrefabType buildingSelected = PrefabType.Tile;
+    public PrefabType buildingSelected = PrefabType.None;
     public Button houseBtn;
     public Button farmBtn;
     public Button sawmillBtn;
