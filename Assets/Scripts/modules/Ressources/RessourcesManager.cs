@@ -6,9 +6,9 @@ public class RessourcesManager
 {
     private static RessourcesManager Instance;
 
-    public int Wheat { get; set; } = 0;
-    public int Stone { get; set; } = 0;
-    public int Wood { get; set; } = 0;
+    public int Wheat = 0;
+    public int Stone = 0;
+    public int Wood = 0;
 
     public static RessourcesManager GetInstance()
     {

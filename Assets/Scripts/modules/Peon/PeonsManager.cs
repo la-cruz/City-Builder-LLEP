@@ -27,6 +27,10 @@ public class PeonsManager {
         PeonList.Add(peon);
     }
 
+    public int GetCurrentPeonCount() {
+        return PeonList.Count;
+    }
+
     private void GenerateFoolishValue()
     {
         Building house = BuildingsManager.GetInstance().BuildingList[0];

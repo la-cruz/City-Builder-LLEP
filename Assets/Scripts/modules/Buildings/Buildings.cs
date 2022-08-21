@@ -32,7 +32,6 @@ public class Building : MonoBehaviour
             Debug.Log("Peon " + peon.Name + " added");
             Peons.Add(peon);
         }
-
     }
 
     public virtual int Product() 

@@ -8,6 +8,11 @@ public class Farm : Building
         this.Name = "Farm";
         this.Level = 1;
         this.Tiredness = 20;
+
+        Peon peon = PeonsManager.GetInstance().PeonList[0];
+
+        peon.Workplace = this;
+        this.AddPeon(peon);
     }
 
     public int WheatProduction = 3;
