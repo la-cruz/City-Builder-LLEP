@@ -50,6 +50,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6513358534153454991}
   - component: {fileID: 4226393310353722309}
+  - component: {fileID: -6000929111848358636}
   m_Layer: 0
   m_Name: Sawmill 1
   m_TagString: Untagged
@@ -90,6 +91,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5.837252, y: 0.91544133, z: 5.9471617}
   m_Center: {x: -3.0070813, y: 0.4404007, z: -3.0257516}
+--- !u!114 &-6000929111848358636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2371157059978726280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bd01b7aec17d43849ad4f8be5a658cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2972444114597001848
 GameObject:
   m_ObjectHideFlags: 0
