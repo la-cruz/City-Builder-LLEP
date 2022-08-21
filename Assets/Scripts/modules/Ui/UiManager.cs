@@ -71,6 +71,12 @@ public class UiManager : MonoBehaviour
 
     public void UpdateInformationPanel(Building building)
     {
+      if (building == null)
+      {
+        HideInformationPanel();
+        return;
+      }
+
       var canvas = InformationPanel.transform.GetChild(0);
 
       // Update type and lvl
